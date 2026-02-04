@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
               />
             </div>
 
-            <div className="hidden md:flex flex-col">
+            <div className="md:flex flex-col">
               <span
                 className={`text-xl font-serif font-black leading-none ${
                   forceDarkText ? 'text-stone-900' : 'text-white'
@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
                 BOOK MY
               </span>
               <span
-                className={`text-lg font-serif tracking-[0.1em] leading-none ${
+                className={`ml-2 text-xl font-serif tracking-[0.1em] leading-none ${
                   forceDarkText ? 'text-stone-700' : 'text-stone-200'
                 }`}
               >
