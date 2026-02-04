@@ -2,13 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, MapPin, Clock, Star, Shield, Globe, Compass, Leaf, Eye, ArrowUpRight, Trophy, Sparkles, UserCheck, HeartHandshake, Quote, ChevronLeft, ChevronRight, Heart, Sparkle, CloudSun, Navigation, Target } from 'lucide-react';
 import { DESTINATIONS, PLACES_TO_VISIT, BLOG_POSTS } from '../constants';
-import { View, BlogPost, Destination } from '../types';
-
-interface HomeProps {
-  setView: (view: View) => void;
-  onBlogClick: (blog: BlogPost) => void;
-  onDestinationClick: (dest: Destination) => void;
-}
+import { useNavigate } from 'react-router-dom';
 
 const TESTIMONIALS = [
   {
@@ -70,7 +64,8 @@ const AnimatedSection: React.FC<{ children: React.ReactNode; className?: string;
   );
 };
 
-const Home: React.FC<HomeProps> = ({ setView, onBlogClick, onDestinationClick }) => {
+const Home: React.FC = () => {
+  const navigate = useNavigate();
   const [isPaused, setIsPaused] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -83,6 +78,14 @@ const Home: React.FC<HomeProps> = ({ setView, onBlogClick, onDestinationClick })
       });
     }
   };
+  const DESTINATION_ROUTE_MAP: Record<string, string> = {
+    '1': 'dhikala',
+    '4': 'bijrani',
+    '5': 'jhirna',
+    '6': 'dhela',
+    '7': 'phanto',
+    '8': 'sitabani',
+  };  
 
   return (
     <div className="bg-stone-50">
@@ -109,13 +112,13 @@ const Home: React.FC<HomeProps> = ({ setView, onBlogClick, onDestinationClick })
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 animate-reveal" style={{ animationDelay: '400ms' }}>
             <button 
-              onClick={() => setView('destinations')}
+              onClick={() => navigate('/destinations')}
               className="px-12 py-5 bg-white text-stone-900 rounded-full font-bold hover:bg-stone-100 hover:scale-105 transition-all flex items-center gap-3 group shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
             >
               Safari Booking <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
-              onClick={() => setView('places')}
+              onClick={() => navigate('/places')}
               className="px-12 py-5 bg-stone-900/20 backdrop-blur-xl border border-white/30 text-white rounded-full font-bold hover:bg-white/10 hover:scale-105 transition-all"
             >
               Places to Visit
@@ -181,7 +184,7 @@ const Home: React.FC<HomeProps> = ({ setView, onBlogClick, onDestinationClick })
             </p>
           </div>
           <button 
-            onClick={() => setView('destinations')}
+            onClick={() => navigate('/destinations')}
             className="text-stone-900 font-bold border-b-2 border-stone-900 pb-2 flex items-center gap-3 hover:gap-5 transition-all group text-sm uppercase tracking-widest"
           >
             All Safari Zones <ArrowRight className="w-4 h-4" />
@@ -193,7 +196,9 @@ const Home: React.FC<HomeProps> = ({ setView, onBlogClick, onDestinationClick })
             <AnimatedSection key={dest.id} delay={`${idx * 150}ms`}>
               <div 
                 className="group cursor-pointer h-full"
-                onClick={() => onDestinationClick(dest)}
+                onClick={() =>
+                  navigate(`/destinations/${DESTINATION_ROUTE_MAP[dest.id]}`)
+                }                
               >
                 <div className="relative overflow-hidden rounded-[2.5rem] aspect-[4/5] mb-8 shadow-xl transition-all duration-700 group-hover:shadow-2xl">
                   <img 
@@ -254,7 +259,7 @@ const Home: React.FC<HomeProps> = ({ setView, onBlogClick, onDestinationClick })
                 
                 <div className="pt-6 flex items-center justify-between border-t border-stone-50">
                   <button 
-                    onClick={() => setView('contact')}
+                    onClick={() => navigate('/contact')}
                     className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.4em] text-stone-900 hover:text-stone-600 transition-all group/btn"
                   >
                     Speak with a Tracker <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
@@ -318,7 +323,7 @@ const Home: React.FC<HomeProps> = ({ setView, onBlogClick, onDestinationClick })
                   <p className="text-stone-400 text-sm leading-relaxed mb-8">{place.description}</p>
                   <div className="flex items-center justify-between pt-6 border-t border-stone-50">
                     <button 
-                      onClick={() => setView('places')}
+                      onClick={() => navigate('/places')}
                       className="text-[10px] font-bold uppercase tracking-widest border-b border-stone-900 pb-1"
                     >
                       Read More
@@ -357,13 +362,13 @@ const Home: React.FC<HomeProps> = ({ setView, onBlogClick, onDestinationClick })
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <button 
-                  onClick={() => setView('wedding')}
+                  onClick={() => navigate('/weddings')}
                   className="px-12 py-6 bg-white text-stone-900 rounded-full font-bold uppercase tracking-widest text-[11px] hover:bg-stone-100 hover:scale-105 transition-all shadow-[0_20px_40px_rgba(255,255,255,0.2)] flex items-center justify-center gap-3 group"
                 >
                   Start Planning <Heart className="w-4 h-4 text-rose-500 fill-rose-500 group-hover:scale-125 transition-transform" />
                 </button>
                 <button 
-                  onClick={() => setView('wedding')}
+                  onClick={() => navigate('/weddings')}
                   className="px-12 py-6 bg-transparent border border-white/40 text-white rounded-full font-bold uppercase tracking-widest text-[11px] hover:bg-white/10 hover:border-white transition-all backdrop-blur-sm"
                 >
                   Main Wedding Page
@@ -497,13 +502,13 @@ const Home: React.FC<HomeProps> = ({ setView, onBlogClick, onDestinationClick })
 
               <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
                 <button 
-                  onClick={() => setView('contact')}
+                  onClick={() => navigate('/contact')}>
                   className="px-10 py-5 bg-white text-stone-900 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-stone-100 hover:scale-105 transition-all shadow-xl"
-                >
+                
                   Start Your Expedition
                 </button>
                 <button 
-                  onClick={() => setView('destinations')}
+                  onClick={() => navigate('/destinations')}
                   className="px-10 py-5 bg-transparent border border-white/30 text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white/10 hover:border-white transition-all flex items-center gap-3"
                 >
                   Explore The Map <MapPin className="w-4 h-4" />

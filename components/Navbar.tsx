@@ -1,100 +1,116 @@
-
 import React, { useState, useEffect } from 'react';
-import { View } from '../types';
-import { Menu, X, Compass, Instagram, Facebook, Twitter, ArrowRight } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
-interface NavbarProps {
-  currentView: View;
-  setView: (view: View) => void;
-}
+const Navbar: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-const Navbar: React.FC<NavbarProps> = ({ currentView, setView }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
   }, [isMobileMenuOpen]);
 
-  const navLinks: { label: string; view: View }[] = [
-    { label: 'Home', view: 'home' },
-    { label: 'Safari Zones', view: 'destinations' },
-    { label: 'Weddings', view: 'wedding' },
-    { label: 'Places to Visit', view: 'places' },
-    { label: 'Blog', view: 'blog' },
-    { label: 'About', view: 'about' },
-    { label: 'Contact', view: 'contact' },
+  const navLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'Safari Zones', path: '/destinations' },
+    { label: 'Weddings', path: '/weddings' },
+    { label: 'Places to Visit', path: '/places' },
+    { label: 'Blog', path: '/blog' },
+    { label: 'About', path: '/about' },
+    { label: 'Contact', path: '/contact' },
   ];
 
-  const handleLinkClick = (view: View) => {
-    setView(view);
+  const handleNavigate = (path: string) => {
+    navigate(path);
     setIsMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const forceDarkText = isScrolled || ['places', 'blog', 'blog-detail', 'contact', 'destinations', 'wedding'].includes(currentView);
+  const forceDarkText =
+    isScrolled ||
+    ['/places', '/blog', '/contact', '/destinations', '/weddings'].some(p =>
+      location.pathname.startsWith(p)
+    );
 
   return (
     <>
-      <nav 
+      <nav
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-white/90 backdrop-blur-md shadow-sm py-2' 
-            : 'bg-transparent py-4'
+          isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div 
-            className="flex items-center gap-3 cursor-pointer group"
-            onClick={() => handleLinkClick('home')}
+          {/* Logo */}
+          <div
+            className="flex items-center gap-3 cursor-pointer"
+            onClick={() => handleNavigate('/')}
           >
-            <div className="relative w-20 h-20 sm:w-25 sm:h-25 flex items-center justify-center">
-                <img 
-                  src="/images/BMTLOGO.PNG" 
-                  alt="Book My Track Logo"
-                  className={`w-full h-full object-contain transition-all duration-500 ${forceDarkText ? 'brightness-100' : 'brightness-0 invert'}`}
-                />
+            <div className="relative w-20 h-20 flex items-center justify-center">
+              <img
+                src="/images/BMTLOGO.PNG"
+                alt="Book My Track Logo"
+                className={`w-full h-full object-contain transition-all duration-500 ${
+                  forceDarkText ? 'brightness-100' : 'brightness-0 invert'
+                }`}
+              />
             </div>
-            <div className="flex flex-col">
-                <span className={`text-xl sm:text-2xl font-serif tracking-tight font-black transition-colors duration-300 leading-none ${forceDarkText ? 'text-stone-900' : 'text-white'}`}>
-                  BOOK MY
-                </span>
-                <span className={`text-lg sm:text-xl font-serif tracking-[0.1em] font-light transition-colors duration-300 leading-none ${forceDarkText ? 'text-stone-700' : 'text-stone-200'}`}>
-                  TRACK
-                </span>
+
+            <div className="hidden md:flex flex-col">
+              <span
+                className={`text-xl font-serif font-black leading-none ${
+                  forceDarkText ? 'text-stone-900' : 'text-white'
+                }`}
+              >
+                BOOK MY
+              </span>
+              <span
+                className={`text-lg font-serif tracking-[0.1em] leading-none ${
+                  forceDarkText ? 'text-stone-700' : 'text-stone-200'
+                }`}
+              >
+                TRACK
+              </span>
             </div>
           </div>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.filter(link => link.view !== 'contact').map((link) => (
-              <button
-                key={link.view}
-                onClick={() => handleLinkClick(link.view)}
-                className={`text-sm font-medium tracking-wide uppercase transition-colors relative group ${
-                  forceDarkText ? 'text-stone-600 hover:text-stone-900' : 'text-white/90 hover:text-white'
-                }`}
-              >
-                {link.label}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${forceDarkText ? 'bg-stone-900' : 'bg-white'} ${currentView === link.view ? 'w-full' : ''}`} />
-              </button>
-            ))}
-            <button 
-              onClick={() => handleLinkClick('contact')}
+            {navLinks
+              .filter(link => link.path !== '/contact')
+              .map(link => {
+                const isActive = location.pathname === link.path;
+                return (
+                  <button
+                    key={link.path}
+                    onClick={() => handleNavigate(link.path)}
+                    className={`text-sm font-medium uppercase tracking-wide relative group ${
+                      forceDarkText ? 'text-stone-600 hover:text-stone-900' : 'text-white/90 hover:text-white'
+                    }`}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${
+                        isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      } ${forceDarkText ? 'bg-stone-900' : 'bg-white'}`}
+                    />
+                  </button>
+                );
+              })}
+
+            <button
+              onClick={() => handleNavigate('/contact')}
               className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${
-                forceDarkText 
-                  ? 'bg-stone-900 text-white hover:bg-stone-800' 
+                forceDarkText
+                  ? 'bg-stone-900 text-white hover:bg-stone-800'
                   : 'bg-white text-stone-900 hover:bg-stone-100'
               }`}
             >
@@ -102,8 +118,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, setView }) => {
             </button>
           </div>
 
-          <button 
-            className="md:hidden p-2 transition-transform duration-300 active:scale-90"
+          {/* Mobile Toggle */}
+          <button
+            className="md:hidden p-2 active:scale-90"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -115,35 +132,36 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, setView }) => {
         </div>
       </nav>
 
-      <div 
-        className={`fixed inset-0 z-[90] md:hidden transition-all duration-700 ease-in-out ${
-          isMobileMenuOpen 
-            ? 'opacity-100 pointer-events-auto' 
-            : 'opacity-0 pointer-events-none'
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 z-[90] md:hidden transition-all duration-700 ${
+          isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className={`absolute inset-0 bg-stone-50/95 backdrop-blur-xl transition-transform duration-700 ease-expo ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`} />
-        
-        <div className="relative h-full flex flex-col px-8 pt-32 pb-12 overflow-y-auto">
+        <div
+          className={`absolute inset-0 bg-stone-50/95 backdrop-blur-xl transition-transform duration-700 ease-expo ${
+            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+          }`}
+        />
+
+        <div className="relative h-full flex flex-col px-8 pt-32 pb-12">
           <div className="flex-1 flex flex-col justify-center space-y-6">
-            <span className="text-stone-400 text-[10px] font-bold uppercase tracking-[0.4em] mb-4">
-              Navigation
-            </span>
-            {navLinks.map((link, idx) => (
-              <button
-                key={link.view}
-                onClick={() => handleLinkClick(link.view)}
-                className={`text-4xl sm:text-5xl font-serif text-left flex items-center justify-between group transition-all duration-500 ${
-                  isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-                }`}
-                style={{ transitionDelay: `${150 + idx * 50}ms` }}
-              >
-                <span className={`${currentView === link.view ? 'text-stone-900' : 'text-stone-400'}`}>
+            {navLinks.map((link, idx) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <button
+                  key={link.path}
+                  onClick={() => handleNavigate(link.path)}
+                  className={`text-4xl font-serif flex justify-between items-center transition-all duration-500 ${
+                    isActive ? 'text-stone-900' : 'text-stone-400'
+                  }`}
+                  style={{ transitionDelay: `${150 + idx * 50}ms` }}
+                >
                   {link.label}
-                </span>
-                <ArrowRight className={`w-6 h-6 transition-all duration-300 ${currentView === link.view ? 'text-stone-900 opacity-100' : 'text-stone-300 opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0'}`} />
-              </button>
-            ))}
+                  <ArrowRight className="w-6 h-6" />
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
