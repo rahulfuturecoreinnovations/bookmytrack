@@ -102,7 +102,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-5xl">
-          <h1 className="text-6xl md:text-9xl text-white font-serif mb-10 mt-20 md:mt-0 leading-[0.9] drop-shadow-2xl animate-reveal stagger-2">
+          <h1 className="text-6xl md:text-8xl text-white font-serif mb-50 mt-1 md:mt-0 leading-[0.9] drop-shadow-2xl animate-reveal stagger-2">
             Jim Corbett <br /> National Park
           </h1>
           
