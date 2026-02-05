@@ -67,6 +67,23 @@ const AnimatedSection: React.FC<{ children: React.ReactNode; className?: string;
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const [isPaused, setIsPaused] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  
+    document.title = 'Jim Corbett Safari Booking | Book My Track';
+  
+    const canonicalUrl = 'https://www.bookmytrack.com/';
+    let link = document.querySelector("link[rel='canonical']");
+  
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+    }
+  
+    link.setAttribute('href', canonicalUrl);
+  }, []);
+  
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
