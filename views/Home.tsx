@@ -344,7 +344,7 @@ const Home: React.FC = () => {
           <div className="relative rounded-[4rem] overflow-hidden min-h-[650px] flex items-center bg-stone-900 group shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000" 
+                src="/images/weddingfront.png" 
                 alt="Jim Corbett Resorts Wedding"
                 className="w-full h-full object-cover opacity-70 transition-transform duration-[10s] group-hover:scale-110"
               />

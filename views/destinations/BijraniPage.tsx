@@ -57,10 +57,9 @@ const BijraniPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => {
       <section className="py-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
         <div className="space-y-12">
           <div className="space-y-6">
-            <h2 className="text-6xl font-serif leading-tight">The Forest of <br /> Ancient Giants.</h2>
+            <h2 className="text-6xl font-serif leading-tight">Grasslands of <br /> Wild Encounters.</h2>
             <p className="text-xl text-stone-600 font-light leading-relaxed">
-              Bijrani is legendary for its mixed vegetation and lush Sal forests. Once the preferred hunting ground of the British royalty, it now stands as a premier tiger conservation area where the dense undergrowth provides the perfect cover for leopards and sloth bears.
-            </p>
+            Bijrani Zone is one of the most sought-after areas of Jim Corbett, known for its lush natural scenery and expansive open grasslands. With its entry gate situated just 1 km from Ramnagar, the zone is easily accessible and a favorite choice among visitors.            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -93,21 +92,21 @@ const BijraniPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => {
               <Car className="w-12 h-12 text-stone-900 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Jeep Safari in Bijrani</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Private Gypsy Safari</p>
-              <div className="text-4xl font-serif text-stone-900 mb-2">$95</div>
+              <div className="text-4xl font-serif text-stone-900 mb-2">INR 7500 -Indian</div>
               <p className="text-stone-500 text-xs mb-8">Official Jim Corbett Safari Price</p>
               <ul className="text-left w-full space-y-3 mb-10">
-                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-stone-400" /> Private 4x4 Gypsy</li>
-                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-stone-400" /> Max 6 Persons</li>
+              <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-8 h-8 text-stone-500" /> Maximum 6 Persons & 1 children (b/w - 5 to 12 years) are allowed in ONE Jeep</li>
+              <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-stone-500" /> Professional Driver & Nature Guide</li>
               </ul>
             </div>
             <div className="bg-stone-900 p-10 rounded-[2.5rem] shadow-xl text-white flex flex-col items-center text-center relative overflow-hidden">
               <Users className="w-12 h-12 text-stone-400 mb-6" />
-              <h3 className="text-2xl font-serif mb-2">Heritage Walk</h3>
-              <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Guided Buffer Zone Visit</p>
-              <div className="text-4xl font-serif text-white mb-2">$35</div>
+              <h3 className="text-2xl font-serif mb-2">Night Stay in Mid of the Forest</h3>
+              <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Explore the Nature with a pleaseant and calm night</p>
+              <div className="text-4xl font-serif text-white mb-2">As per Availability</div>
               <p className="text-stone-400 text-xs mb-8">Eco-Friendly Exploration</p>
               <ul className="text-left w-full space-y-3 mb-10">
-                <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-stone-400" /> Expert Naturalist</li>
+                <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-stone-400" /> Tree House Available</li>
                 <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-stone-400" /> Binocular Hire Incl.</li>
               </ul>
             </div>

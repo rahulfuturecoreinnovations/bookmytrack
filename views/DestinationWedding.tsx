@@ -11,7 +11,7 @@ const DestinationWedding: React.FC<{ setView: (v: View) => void }> = ({ setView 
       <header className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000" 
+            src="/images/weddingfront.png" 
             className="w-full h-full object-cover scale-105 animate-[ken-burns_30s_infinite]" 
             alt="Wedding Destination" 
           />
@@ -73,7 +73,7 @@ const DestinationWedding: React.FC<{ setView: (v: View) => void }> = ({ setView 
         <div className="relative">
           <div className="aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl relative group">
             <img 
-              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1200" 
+              src="/images/wedding2.JPG" 
               className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110" 
               alt="Wedding Setup" 
             />

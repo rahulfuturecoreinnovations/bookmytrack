@@ -67,10 +67,11 @@ const DhikalaPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => {
           <div className="space-y-6">
             <h2 className="text-6xl font-serif leading-tight">Premium <br /> Jim Corbett Safari Packages.</h2>
             <p className="text-xl text-stone-600 font-light leading-relaxed">
-              Dhikala is the most sought-after zone for a <strong>jungle safari in Jim Corbett</strong>. Known for its tiger density and the vast Ramganga grasslands, it offers the ultimate wilderness experience. Stay in premium Jim Corbett resorts nearby or book an exclusive Forest Rest House stay.
+            Dhikala, the largest and most diverse safari zone in Jim Corbett, <strong>is renowned for its rich landscapes and exceptional wildlife viewing opportunities.</strong>. Located about 18 km from Ramnagar, this zone is especially popular for its high chances of spotting a wide variety of fauna. For true wildlife lovers, staying overnight within the Dhikala Tourism Zone offers an unmatched and immersive jungle experience.
             </p>
           </div>
-          
+          {/*  
+ */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-8 bg-white rounded-3xl shadow-sm border border-stone-100">
               <MapIcon className="w-8 h-8 text-orange-600 mb-4" />
@@ -101,11 +102,11 @@ const DhikalaPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => {
               <Car className="w-12 h-12 text-stone-900 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Jeep Safari in Jim Corbett</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Private Gypsy Safari</p>
-              <div className="text-4xl font-serif text-stone-900 mb-2">$110</div>
+              <div className="text-4xl font-serif text-stone-900 mb-2">Price as per Packages</div>
               <p className="text-stone-500 text-xs mb-8">Best Jim Corbett Safari Package</p>
               <ul className="text-left w-full space-y-3 mb-10">
-                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-orange-500" /> Private 4x4 Gypsy</li>
-                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-orange-500" /> Professional Driver</li>
+                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-8 h-8 text-orange-500" /> Maximum 6 Persons & 1 children (b/w - 5 to 12 years) are allowed in ONE Jeep</li>
+                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-orange-500" /> Professional Driver & Nature Guide</li>
               </ul>
             </div>
             <div className="bg-stone-900 p-10 rounded-[2.5rem] shadow-xl text-white flex flex-col items-center text-center relative overflow-hidden">
@@ -115,7 +116,8 @@ const DhikalaPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => {
               <Users className="w-12 h-12 text-orange-500 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Canter Safari Jim Corbett</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Shared Core Zone Visit</p>
-              <div className="text-4xl font-serif text-white mb-2">$25</div>
+              <div className="text-4xl font-serif text-white mb-2">INR 2500 -Indian</div>
+              <div className="text-4xl font-serif text-white mb-2">INR 5500 -Foreigner</div>
               <p className="text-stone-400 text-xs mb-8">Best Canter Safari Jim Corbett Price</p>
               <ul className="text-left w-full space-y-3 mb-10">
                 <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-orange-500" /> 16 Seater Vehicle</li>
