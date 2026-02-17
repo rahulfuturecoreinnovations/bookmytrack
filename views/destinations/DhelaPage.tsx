@@ -93,18 +93,18 @@ const DhelaPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => {
               <Car className="w-12 h-12 text-stone-900 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Eco-Jeep Safari</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Standard Wild Access</p>
-              <div className="text-4xl font-serif text-stone-900 mb-2">$80</div>
+              <div className="text-4xl font-serif text-stone-900 mb-2">INR 7500 -Indian</div>
               <p className="text-stone-500 text-xs mb-8">Best Value for Jim Corbett Safari Booking</p>
               <ul className="text-left w-full space-y-3 mb-10">
                 <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-emerald-600" /> Professional Driver</li>
-                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-emerald-600" /> Max 6 Persons</li>
+                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-8 h- text-emerald-600" /> Maximum 6 Persons & 1 children (b/w - 5 to 12 years) are allowed in ONE Jeep</li>
               </ul>
             </div>
             <div className="bg-emerald-900 p-10 rounded-[2.5rem] shadow-xl text-white flex flex-col items-center text-center relative overflow-hidden">
               <Users className="w-12 h-12 text-emerald-400 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Naturalist Escort</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Educational Wildlife Tour</p>
-              <div className="text-4xl font-serif text-white mb-2">$120</div>
+              <div className="text-4xl font-serif text-white mb-2">Prices As Per Availablity</div>
               <p className="text-stone-400 text-xs mb-8">Deep Ecosystem Insight</p>
               <ul className="text-left w-full space-y-3 mb-10">
                 <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Senior Naturalist</li>

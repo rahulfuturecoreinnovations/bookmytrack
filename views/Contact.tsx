@@ -25,7 +25,7 @@ const Contact: React.FC<ContactProps> = ({ initialDestination = '' }) => {
                   <MapPin className="w-5 h-5 text-stone-900" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-stone-900 mb-1">Our Studio</h4>
+                  <h4 className="font-bold text-stone-900 mb-1">Our Office</h4>
                   <p className="text-stone-500 text-sm">Main Road, Ramnagar<br />Nainital, Uttarakhand 244715</p>
                 </div>
               </div>
@@ -35,7 +35,7 @@ const Contact: React.FC<ContactProps> = ({ initialDestination = '' }) => {
                 </div>
                 <div>
                   <h4 className="font-bold text-stone-900 mb-1">Email Us</h4>
-                  <p className="text-stone-500 text-sm">expeditions@lumina-corbett.com<br />concierge@lumina.travel</p>
+                  <p className="text-stone-500 text-sm">boookmytrack@gmail.com<br /></p>
                 </div>
               </div>
             </div>

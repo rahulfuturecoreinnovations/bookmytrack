@@ -101,18 +101,18 @@ const PhantoPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => {
               <Car className="w-12 h-12 text-stone-400 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Frontier Jeep Safari</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Private Gypsy Safari</p>
-              <div className="text-4xl font-serif text-white mb-2">$75</div>
+              <div className="text-4xl font-serif text-stone mb-2">INR 7500 -Indian</div>
               <p className="text-stone-400 text-xs mb-8">Special Introductory Jim Corbett Safari Price</p>
               <ul className="text-left w-full space-y-3 mb-10">
-                <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-white" /> Core Zone Access</li>
-                <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-white" /> Exclusive Tracks</li>
+              <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-8 h-8 text-white" /> Maximum 6 Persons & 1 children (b/w - 5 to 12 years) are allowed in ONE Jeep</li>
+              <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-white" /> Exclusive Tracks</li>
               </ul>
             </div>
             <div className="bg-white p-10 rounded-[2.5rem] shadow-xl text-stone-900 flex flex-col items-center text-center">
               <Users className="w-12 h-12 text-stone-900 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Expedition Group</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Guided Group Discovery</p>
-              <div className="text-4xl font-serif text-stone-900 mb-2">$115</div>
+              <div className="text-4xl font-serif text-stone-900 mb-2">Prices As Per Availablity</div>
               <p className="text-stone-500 text-xs mb-8">Pioneer Exploration Team</p>
               <ul className="text-left w-full space-y-3 mb-10">
                 <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-stone-900" /> Professional Naturalist</li>

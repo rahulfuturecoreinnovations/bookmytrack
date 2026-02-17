@@ -93,7 +93,7 @@ const SitabaniPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => 
               <Car className="w-12 h-12 text-stone-900 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Heritage Jeep Safari</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Private Buffer Access</p>
-              <div className="text-4xl font-serif text-stone-900 mb-2">$60</div>
+              <div className="text-4xl font-serif text-stone mb-2">INR 7500 -Indian</div>
               <p className="text-stone-500 text-xs mb-8">Best Jim Corbett Safari Package</p>
               <ul className="text-left w-full space-y-3 mb-10">
                 <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-stone-500" /> Private Gypsy</li>
@@ -104,7 +104,7 @@ const SitabaniPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => 
               <Footprints className="w-12 h-12 text-stone-400 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Guided Walking Tour</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Nature Walk Expedition</p>
-              <div className="text-4xl font-serif text-white mb-2">$30</div>
+              <div className="text-4xl font-serif text-white mb-2">Prices As Per Availablity</div>
               <p className="text-stone-400 text-xs mb-8">The Purest Wild Connection</p>
               <ul className="text-left w-full space-y-3 mb-10">
                 <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-stone-500" /> Expert Escort</li>

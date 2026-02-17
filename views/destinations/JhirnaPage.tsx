@@ -93,10 +93,10 @@ const JhirnaPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => {
               <Car className="w-12 h-12 text-stone-900 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Jeep Safari in Jhirna</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Private Gypsy Safari</p>
-              <div className="text-4xl font-serif text-stone-900 mb-2">$85</div>
+              <div className="text-4xl font-serif text-stone-900 mb-2">INR 7500 -Indian</div>
               <p className="text-stone-500 text-xs mb-8">All-Season Booking Available</p>
               <ul className="text-left w-full space-y-3 mb-10">
-                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-stone-500" /> Core Zone Access</li>
+                <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-8 h- text-stone-500" /> Maximum 6 Persons & 1 children (b/w - 5 to 12 years) are allowed in ONE Jeep</li>
                 <li className="flex items-center gap-3 text-sm text-stone-600"><CheckCircle2 className="w-4 h-4 text-stone-500" /> Morning/Evening Slots</li>
               </ul>
             </div>
@@ -104,7 +104,7 @@ const JhirnaPage: React.FC<{ setView: (v: View) => void }> = ({ setView }) => {
               <Users className="w-12 h-12 text-stone-400 mb-6" />
               <h3 className="text-2xl font-serif mb-2">Photography Package</h3>
               <p className="text-stone-400 text-sm mb-6 uppercase tracking-widest font-bold">Enhanced Wild Experience</p>
-              <div className="text-4xl font-serif text-white mb-2">$145</div>
+              <div className="text-4xl font-serif text-white mb-2">Prices As Per Availablity</div>
               <p className="text-stone-400 text-xs mb-8">Pro-Naturalist Escort</p>
               <ul className="text-left w-full space-y-3 mb-10">
                 <li className="flex items-center gap-3 text-sm text-stone-300"><CheckCircle2 className="w-4 h-4 text-stone-500" /> Longer Track Time</li>
