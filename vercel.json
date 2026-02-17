@@ -1,16 +1,8 @@
 {
-    "redirects": [
-      {
-        "source": "http://bookmytrack.com/:path*",
-        "destination": "https://bookmytrack.com/:path*",
-        "permanent": true
-      }
-    ],
-    "rewrites": [
-      {
-        "source": "/:path*",
-        "destination": "/"
-      }
-    ]
-  }
-  
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
