@@ -108,7 +108,7 @@ const Home: React.FC = () => {
           </h1>
           
           <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed animate-reveal stagger-3">
-            Embark on a luxury jungle safari in Jim Corbett. Secure your permits for Dhikala, Bijrani, and Jhirna with our premium Jim Corbett safari packages.
+            Embark on a luxury jungle safari in Jim Corbett. Secure your permits for Dhikala, Bijrani, and Jhirna with Book My Track premium Jim Corbett safari packages.
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 animate-reveal" style={{ animationDelay: '400ms' }}>

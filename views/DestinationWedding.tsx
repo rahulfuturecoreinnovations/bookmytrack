@@ -100,19 +100,19 @@ const DestinationWedding: React.FC<{ setView: (v: View) => void }> = ({ setView 
               {
                 title: "Riverfront Serenity",
                 desc: "Exchange rings on the banks of the Kosi river with the sound of flowing water and the Himalayas as your backdrop.",
-                image: "https://images.unsplash.com/photo-1544006659-f0b21f04cb1d?auto=format&fit=crop&q=80&w=800",
+                image: "/images/midforest.png",
                 tag: "Riverside Luxury"
               },
               {
                 title: "Forest Glade Manor",
                 desc: "A sprawling estate nestled within the buffer zone, offering complete privacy and a heritage Sal forest ambiance.",
-                image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800",
+                image: "/images/riverfront.png",
                 tag: "Bespoke Heritage"
               },
               {
                 title: "Sky-Deck Pavilion",
                 desc: "A high-altitude open-air venue with 360-degree views of the Corbett valley—perfect for a starlit reception.",
-                image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=800",
+                image: "/images/skydeck.png",
                 tag: "Valley Views"
               }
             ].map((venue, i) => (
